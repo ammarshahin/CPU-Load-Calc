@@ -91,6 +91,8 @@ uint8 UART_Init()
 	uint8 ucsrcHolder = (1<<URSEL);
 	/* Setting the Baud rate */
 	uint16 BaudRate = (UART_Cfg_s.MCU_Freq / (BAUDRATE_FACTOR_16 * UART_Cfg_s.BaudRate)) - BAUDRATE_FACTOR_1;
+	UART_UBRRL = BaudRate;
+	UART_UBRRH = (BaudRate >> BAUDRATE_FACTOR_8);
 	
 	SET_BIT(ucsrcHolder,URSEL);
 	
@@ -175,9 +177,7 @@ uint8 UART_Init()
 		cfg_State = NOT_OK;
 		break;
 	}
-	UART_UCSRC = 0x06;//ucsrcHolder;
-	UART_UBRRL = BaudRate;
-	//UART_UBRRH = (BaudRate >> BAUDRATE_FACTOR_8);
+	UART_UCSRC = ucsrcHolder;
 	return cfg_State;
 }
 
