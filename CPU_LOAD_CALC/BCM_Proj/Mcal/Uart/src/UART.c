@@ -58,10 +58,12 @@
 #define UCSZ0   1
 #define UCPOL   0
 
+/************************************************************************/
+/*                              Macro Used                              */
+/************************************************************************/
 #define BAUDRATE_FACTOR_16 16
 #define BAUDRATE_FACTOR_8  8
 #define BAUDRATE_FACTOR_1  1
-
 
 /************************************************************************/
 /*                   Global Static(Private) Variables                    */
