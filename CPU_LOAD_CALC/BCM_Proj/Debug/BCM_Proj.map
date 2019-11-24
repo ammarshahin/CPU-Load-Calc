@@ -1065,7 +1065,7 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x296c
+.debug_info     0x00000000     0x2971
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x4e6 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_info    0x000004e6      0x14b Ecual/Led/src/Led.o
@@ -1078,8 +1078,8 @@ END GROUP
  .debug_info    0x000017a1       0xe7 Mcal/Interrupts/src/Interrupts.o
  .debug_info    0x00001888      0xc1a Mcal/Timer/src/Timers.o
  .debug_info    0x000024a2      0x161 Mcal/Timer/src/Timers_Lcfg.o
- .debug_info    0x00002603      0x271 Mcal/Uart/src/UART.o
- .debug_info    0x00002874       0xf8 Mcal/Uart/src/UART_Lcfg.o
+ .debug_info    0x00002603      0x276 Mcal/Uart/src/UART.o
+ .debug_info    0x00002879       0xf8 Mcal/Uart/src/UART_Lcfg.o
 
 .debug_abbrev   0x00000000     0x1000
  *(.debug_abbrev)
