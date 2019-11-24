@@ -167,7 +167,6 @@ uint8 UART_Init()
 		case ENABLED:
 		SET_BIT(UART_UCSRB,RXCIE);
 		SET_BIT(UART_UCSRB,TXCIE);
-		SET_BIT(UART_UCSRB,UDRIE);
 		break;
 		case DISABLED:
 		CLR_BIT(UART_UCSRB,RXCIE);
@@ -192,12 +191,7 @@ uint8 UART_Init()
  */
 uint8 UART_Send(uint8 data)
 {
-	/* Wait for empty transmit buffer */
-	while( GET_BIT(UART_UCSRA,UDRE) == FALSE);
 	UART_UDR = data;
-	if( gPtrCallBk != NULL)
-		gPtrCallBk();
-	//Interrupts_On();
 	return OK;
 }
 
@@ -270,10 +264,8 @@ void UART_SetCallBack(ptrUARTFunCallBk_t FunName)
 }
 
 
-ISR_T(USART_UDRE_vect)
+ISR_T(USART_TXC_vect)
 {
 	if( gPtrCallBk != NULL)
 		gPtrCallBk();
-		
-	//interrupts_Off();
 }

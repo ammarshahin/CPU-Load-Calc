@@ -36,6 +36,6 @@ UART_CFG_S UART_Cfg_s = {
     ENABLED,       /* Enable_Transmitter */
 	DISABLED,       /* Enable_Parity */
     SINGLE_STOPBIT, /* StopBits */
-	DISABLED,       /* Interrupt_Receive */
+	ENABLED,       /* Interrupt_Receive */
 	F_CPU,          /* MCU_Freq */
 };
